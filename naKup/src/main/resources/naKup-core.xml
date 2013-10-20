@@ -31,8 +31,6 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-<!--     <tx:annotation-driven /> -->
-
 	<tx:annotation-driven transaction-manager="transactionManager" />
     
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -46,8 +44,8 @@
 		<property name="persistenceUnitName" value="NaKupPU" />
 		<property name="jpaPropertyMap">
 			<util:map>
-				<entry key="hibernate.hbm2ddl.auto" value="none" />
-				<entry key="hibernate.show_sql" value="false" />
+				<entry key="hibernate.hbm2ddl.auto" value="update" />
+				<entry key="hibernate.show_sql" value="true" />
 				<entry key="hibernate.format_sql" value="false" />
 				<entry key="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
 			</util:map>
