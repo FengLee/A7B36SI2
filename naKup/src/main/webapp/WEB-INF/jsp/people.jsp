@@ -1,12 +1,11 @@
-<!doctype html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>NaKup lokalne</title>
-</head>
-
-<body>
-	Ja, Ty, On, Ona ${personId}
-</body>
-</html>
+<t:content>
+	<jsp:body>
+	
+		Pocet lidi v databazi: ${personId} <br>
+		F5 pro pridani dalsiho cloveka.
+		
+	</jsp:body>
+</t:content>

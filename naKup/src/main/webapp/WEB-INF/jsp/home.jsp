@@ -1,15 +1,16 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Nakup lokalne</title>
-</head>
+<t:content>
+	<jsp:body>
+	
+		lokalizovany pozdrav: <fmt:message key="hello" />
+		<div>
+		  <a href="/naKup/people">klikni</a>
+		</div>
+		
+	</jsp:body>
+</t:content>
 
-<body>
-	lokalizovany pozdrav: <fmt:message key="hello" />
-	<div>
-	  <a href="/naKup/people">klikni</a>
-	</div>
-</body>
-</html>
+
