@@ -1,21 +1,20 @@
 package com.cvut.naKup.dao;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import org.springframework.stereotype.Repository;
 
 import com.cvut.naKup.domain.Person;
 
+/**
+ * Test dao.
+ * 
+ * @author marek
+ *
+ */
 @Repository
-public class PersonJpaDao implements PersonDao {
+public class PersonJpaDao extends NaKupJpaBaseDao<Person> implements PersonDao {
 	
-	@PersistenceContext
-	private EntityManager em;
-	
-	public Long persist(Person p) {
-		em.persist(p);
-		return p.getId();
+	public PersonJpaDao() {
+		super(Person.class);
 	}
-
+	
 }

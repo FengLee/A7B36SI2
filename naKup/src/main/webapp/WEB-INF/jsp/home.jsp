@@ -1,4 +1,4 @@
-<!doctype html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <html>
 <head>
@@ -7,8 +7,9 @@
 </head>
 
 <body>
+	lokalizovany pozdrav: <fmt:message key="hello" />
 	<div>
-	  <a href="/naKup/people">Klikni</a>
+	  <a href="/naKup/people">klikni</a>
 	</div>
 </body>
 </html>

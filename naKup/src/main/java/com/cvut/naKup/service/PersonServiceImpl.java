@@ -7,6 +7,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cvut.naKup.dao.PersonDao;
 import com.cvut.naKup.domain.Person;
 
+/**
+ * Test service.
+ * 
+ * @author marek
+ *
+ */
 @Service
 @Transactional
 public class PersonServiceImpl implements PersonService {

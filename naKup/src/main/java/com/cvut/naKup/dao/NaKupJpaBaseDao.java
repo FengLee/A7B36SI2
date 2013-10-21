@@ -1,5 +1,85 @@
 package com.cvut.naKup.dao;
 
-public class NaKupJpaBaseDao {
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import com.cvut.naKup.domain.NaKupEntity;
+
+/**
+ * NaKup base for JPA DAO implementations.
+ * 
+ * @author marek cech
+ *
+ */
+public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
+	
+	@PersistenceContext
+	private EntityManager em;
+	
+	/**
+	 * Class of persisted entity.
+	 */
+	private final Class<T> entity;
+	
+	/**
+	 * Constructor setting persisted entity class.
+	 * @param entity
+	 */
+	public NaKupJpaBaseDao(Class<T> entity) {
+		this.entity = entity;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public EntityManager getEntityManager() {
+		return em;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public T findById(Long id) {
+		if (id == null) {
+			return null;
+		}
+		return em.find(entity, id);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public List<T> loadAll() {
+		CriteriaQuery<T> q = em.getCriteriaBuilder().createQuery(entity);
+		Root<T> root = q.from(entity);
+		q.select(root);
+		return em.createQuery(q).getResultList();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public Long persist(T entity) {
+		em.persist(entity);
+		return entity.getEntityId();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void update(T entity) {
+		em.merge(entity);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void remove(T entity) {
+		em.remove(entity);
+	}
 
 }

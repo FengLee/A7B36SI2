@@ -2,8 +2,12 @@ package com.cvut.naKup.dao;
 
 import com.cvut.naKup.domain.Person;
 
-public interface PersonDao {
+/**
+ * Test dao.
+ * 
+ * @author marek
+ *
+ */
+public interface PersonDao extends NaKupBaseDao<Person> {
 	
-	public Long persist(Person p);
-
 }

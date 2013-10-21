@@ -5,30 +5,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * This entity represents person.
+ * Test class.
  * 
  * @author marek cech
  *
  */
 @Entity
-public class Person {
+public class Person extends NaKupEntity {
 	
-	@Id
-    @GeneratedValue
-    private Long id;
-
-    private String firstName;
+	private String firstName;
 
     private String lastName;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getFirstName() {
         return firstName;

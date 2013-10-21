@@ -8,6 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cvut.naKup.domain.Person;
 import com.cvut.naKup.service.PersonService;
 
+/**
+ * Test controller.
+ * 
+ * @author marek
+ *
+ */
 @Controller
 public class PeopleController {
 	
