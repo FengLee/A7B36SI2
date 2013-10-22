@@ -59,7 +59,7 @@ public interface NaKupBaseDao<T extends NaKupEntity> {
 	public void remove(T entity);
 	
 	/**
-	 * Returns count of entities persisted id DB.
+	 * Returns count of entities persisted in DB.
 	 * 
 	 * @return
 	 */

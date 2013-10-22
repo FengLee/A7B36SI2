@@ -87,7 +87,7 @@ public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
 	 * {@inheritDoc}
 	 */
 	public Long getCount() {
-		CriteriaBuilder cBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaBuilder cBuilder = em.getCriteriaBuilder();
 		CriteriaQuery<Long> cQuery = cBuilder.createQuery(Long.class);
 		Root<T> root = cQuery.from(entity);
 		cQuery.select(cBuilder.count(root));
