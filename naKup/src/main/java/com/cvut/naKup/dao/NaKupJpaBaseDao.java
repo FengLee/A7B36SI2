@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -80,6 +81,17 @@ public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
 	 */
 	public void remove(T entity) {
 		em.remove(entity);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public Long getCount() {
+		CriteriaBuilder cBuilder = getEntityManager().getCriteriaBuilder();
+		CriteriaQuery<Long> cQuery = cBuilder.createQuery(Long.class);
+		Root<T> root = cQuery.from(entity);
+		cQuery.select(cBuilder.count(root));
+		return getEntityManager().createQuery(cQuery).getSingleResult();
 	}
 
 }

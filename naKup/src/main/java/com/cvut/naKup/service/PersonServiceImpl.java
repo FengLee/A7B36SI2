@@ -23,9 +23,14 @@ public class PersonServiceImpl implements PersonService {
 	public Long persist(Person p) {
 		return personDao.persist(p);
 	}
+	
+	public Long getCount() {
+		return personDao.getCount();
+	}
 
 	public void setPersonDao(PersonDao personDao) {
 		this.personDao = personDao;
 	}
+
 	
 }

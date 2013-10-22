@@ -25,8 +25,9 @@ public class PeopleController {
 		Person p = new Person();
 		p.setFirstName("Jan");
 		p.setLastName("Novak");
-		Long id = personService.persist(p);
-		model.put("personId", id);
+		personService.persist(p);
+		Long count = personService.getCount();
+		model.put("personId", count);
 		return "people";
 	}
 
