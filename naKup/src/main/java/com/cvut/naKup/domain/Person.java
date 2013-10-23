@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 /**
  * Test class.
- * 
+ * pokus git
  * @author marek cech
  *
  */
