@@ -1,7 +1,10 @@
-package com.cvut.naKup.domain;
+package com.cvut.naKup.domain;					
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -31,6 +34,16 @@ public class User extends NaKupEntity{
 	private String picture;
 	private String popis;
 	private Authority authority;
+	
+	@OneToMany(mappedBy = "forWho")
+	private List<PersonalMsg> messages;
+	@OneToMany(mappedBy = "forWho")
+	private List<Comment> comments;
+	@OneToMany(mappedBy = "from")
+	private List<Order> buyOrders;
+	@OneToMany(mappedBy = "forWho")
+	private List<Order> sellOrders;
+	
 	@Autowired
 	private transient HashProvider hashProvider;
 	
@@ -112,5 +125,40 @@ public class User extends NaKupEntity{
 	public void setAuthority(Authority authority) {
 		this.authority = authority;
 	}
-		
+	public List<PersonalMsg> getMessages() {
+		if(this.messages == null){
+			this.messages = new ArrayList<PersonalMsg>();
+		}
+		return messages;
+	}
+	public void setMessages(List<PersonalMsg> messages) {
+		this.messages = messages;
+	}
+	public List<Comment> getComments() {
+		if(this.comments == null){
+			this.comments = new ArrayList<Comment>();
+		}
+		return comments;
+	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+	public List<Order> getBuyOrders() {
+		if(this.buyOrders == null){
+			this.buyOrders = new ArrayList<Order>();
+		}
+		return buyOrders;
+	}
+	public void setBuyOrders(List<Order> buyOrders) {
+		this.buyOrders = buyOrders;
+	}
+	public List<Order> getSellOrders() {
+		if(this.sellOrders == null){
+			this.sellOrders = new ArrayList<Order>();
+		}
+		return sellOrders;
+	}
+	public void setSellOrders(List<Order> sellOrders) {
+		this.sellOrders = sellOrders;
+	}		
 }
