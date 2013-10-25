@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
  *
  */
 @Entity
-public class Comment extends NaKupEntity{
+public class Comment {
 	@Column(nullable = false)
 	private String comment;
 	
