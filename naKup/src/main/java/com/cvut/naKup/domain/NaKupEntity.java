@@ -13,7 +13,7 @@ import javax.persistence.Transient;
  *
  */
 @MappedSuperclass
-public abstract class NaKupEntity {
+public abstract class NaKupEntity{
 
 	/**
 	 * ID of entity.

@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Table of orders
@@ -13,6 +14,7 @@ import javax.persistence.OneToMany;
  *
  */
 @Entity
+@Table(name="Orders")
 public class Order extends NaKupEntity{
 	@Column(nullable = false)
 	private double weight;

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,22 +16,25 @@ import com.cvut.naKup.provider.HashProvider;
  *
  */
 @Entity
+@Table(name="Users")
 public class User extends NaKupEntity{
-	@Column(nullable=false)
+	
 	private String firstName;
-	@Column(nullable=false)
+	
 	private String lastName;
+	
 	private String login;
-	@Column(length = 40, nullable = false)
+	
 	private String salt;
-	@Column(length = 40, nullable = false)
+	
 	private String password;
-	@Column(nullable=false)
+	
 	private String street;
-	@Column(nullable=false)
+	
 	private String city;
-	@Column(nullable=false)
+	
 	private String psc;
+	
 	private String picture;
 	private String popis;
 	private Authority authority;
@@ -45,9 +49,9 @@ public class User extends NaKupEntity{
 	private List<Order> sellOrders;
 	
 	@Autowired
-	private transient HashProvider hashProvider;
+	private transient HashProvider hashProvider;	
 	
-	public String getFirstName() {
+	public String getFirstName() {		
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
