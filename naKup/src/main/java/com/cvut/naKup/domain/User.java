@@ -18,25 +18,25 @@ import com.cvut.naKup.provider.HashProvider;
 @Entity
 @Table(name="Users")
 public class User extends NaKupEntity{
-	
+	@Column(nullable = false)
 	private String firstName;
-	
+	@Column(nullable = false)
 	private String lastName;
-	
+	@Column(nullable = false)
 	private String login;
-	
+	@Column(length = 40, nullable = false)
 	private String salt;
-	
+	@Column(length = 40, nullable = false)
 	private String password;
-	
+	@Column(nullable = false)
 	private String street;
-	
+	@Column(nullable = false)
 	private String city;
-	
-	private String psc;
-	
+	@Column(nullable = false)
+	private String psc;	
 	private String picture;
 	private String popis;
+	@Column(nullable = false)
 	private Authority authority;
 	
 	@OneToMany(mappedBy = "forWho")
