@@ -2,7 +2,7 @@
 
 <html>
   	<head>
-  		<meta charset="utf-8">
+  		<meta charset="utf-8">  		
   		<title>Nakup lokalne</title>
   		<link type="text/css" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	</head>
