@@ -2,6 +2,7 @@ package com.cvut.naKup.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  * Table of goods
@@ -16,7 +17,10 @@ public class Goods extends NaKupEntity{
 	private double cost;
 	private String picture;
 	private String text;
-		
+	
+	@ManyToOne
+	private Category category;
+	
 	public String getName() {
 		return name;
 	}
