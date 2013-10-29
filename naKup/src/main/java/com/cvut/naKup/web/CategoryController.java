@@ -27,4 +27,9 @@ public class CategoryController {
 		model.put("listCategory", res);
 		return "categories";
 	}
+
+	public void setCategoryService(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+	
 }

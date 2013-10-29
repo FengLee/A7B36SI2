@@ -6,9 +6,12 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import org.springframework.stereotype.Repository;
+
 import com.cvut.naKup.domain.Category;
 import com.cvut.naKup.domain.Goods;
 
+@Repository
 public class CategoryJpaDao extends NaKupJpaBaseDao<Category> implements CategoryDao{
 
 	public CategoryJpaDao() {
