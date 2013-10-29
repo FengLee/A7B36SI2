@@ -8,7 +8,7 @@ import com.cvut.naKup.domain.Person;
  * Test dao.
  * 
  * @author marek
- *
+ * TODO delete this file
  */
 @Repository
 public class PersonJpaDao extends NaKupJpaBaseDao<Person> implements PersonDao {
