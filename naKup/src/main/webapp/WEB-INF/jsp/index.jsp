@@ -3,7 +3,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <t:content>
 	<jsp:body>
@@ -28,5 +27,31 @@
 		  		</tbody>
 		  </table>
 		</div>
+		
+		<a data-toggle="modal" href="#registrationModal" class="btn btn-primary btn-lg"><fmt:message key="register" /></a>
+
+		  <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          <h4 class="modal-title"><fmt:message key="register" /></h4>
+		        </div>
+		        <div class="modal-body">
+		          <fmt:message key="register.description" />
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="register.cancel" /></button>
+					<a class="btn btn-danger" href="<c:url value="/registration?type=vendor"/>">
+						<fmt:message key="register.vendor.button" />
+					</a>
+					<a class="btn btn-primary" href="<c:url value="/registration?type=customer"/>">
+						<fmt:message key="register.customer.button" />
+					</a>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		  
 	</jsp:body>
 </t:content>
