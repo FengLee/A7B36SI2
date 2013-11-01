@@ -42,11 +42,8 @@
 		        </div>
 		        <div class="modal-footer">
 		          <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="register.cancel" /></button>
-					<a class="btn btn-danger" href="<c:url value="/registration?type=vendor"/>">
-						<fmt:message key="register.vendor.button" />
-					</a>
-					<a class="btn btn-primary" href="<c:url value="/registration?type=customer"/>">
-						<fmt:message key="register.customer.button" />
+					<a class="btn btn-primary" href="<c:url value="/registration"/>">
+						<fmt:message key="register.button" />
 					</a>
 		        </div>
 		      </div>

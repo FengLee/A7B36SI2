@@ -20,19 +20,13 @@ public class RegistrationController {
 	private UserService userService;
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
-	public ModelAndView showPage(@RequestParam(required = true) String type) {
-		RegistrationForm form = new RegistrationForm();
-		if (type.equals("vendor")) {
-			form.setAuthority(Authority.Seller);
-		} else if (type.equals("customer")) {
-			form.setAuthority(Authority.Buyer);
-		}
-		return new ModelAndView("registration", "command", form);
+	public ModelAndView showPage() {
+		return new ModelAndView("registration", "command", new RegistrationForm());
 	}
 	
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	public String addUser(@ModelAttribute("SpringWeb") RegistrationForm form) {
-		//userService.addUser(form);
+		userService.addUser(form);
 		return "redirect:/";
 	}
 

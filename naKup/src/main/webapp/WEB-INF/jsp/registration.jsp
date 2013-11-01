@@ -8,83 +8,79 @@
 <t:content>
 	<jsp:body>
 	
-<%-- 		<form:form method="POST" action="/naKup/addUser"> --%>
-<%-- 		   <table> --%>
-<%-- 			    <tr> --%>
-<%-- 			        <td><form:label path="firstName">firstName</form:label></td> --%>
-<%-- 			        <td><form:input path="firstName" /></td> --%>
-<%-- 			    </tr> --%>
-<%-- 			    <tr> --%>
-<%-- 			        <td><form:label path="lastName">lastName</form:label></td> --%>
-<%-- 			        <td><form:input path="lastName" /></td> --%>
-<%-- 			    </tr> --%>
-<%-- 			    <tr> --%>
-<%-- 			        <td><form:label path="login">login</form:label></td> --%>
-<%-- 			        <td><form:input path="login" /></td> --%>
-<%-- 			    </tr> --%>
-<%-- 			    <tr> --%>
-<%-- 			        <td colspan="2"> --%>
-<!-- 			            <input type="submit" value="Submit"/> -->
-<%-- 			        </td> --%>
-<%-- 			    </tr> --%>
-<%-- 			</table>   --%>
-<%-- 		</form:form> --%>
 		<div class="container">
 			<form class="form-horizontal" role="form" id="command" action="/naKup/addUser" method="POST">
 			
+				<div class="page-header">
+				  <h1><fmt:message key="register" /></h1>
+				</div>
+				<div class="form-group">
+					<label for="userTypeRadios1" class="col-lg-2 control-label"><fmt:message key="userType" /></label>
+					<div class="radio-inline">
+					  <label>
+					    <input type="radio" name="customer" id="userTypeRadios1" value="true" checked>
+					    <fmt:message key="customer" />
+					  </label>
+					</div>
+					<div class="radio-inline">
+					  <label>
+					    <input type="radio" name="customer" id="userTypeRadios1" value="false">
+					    <fmt:message key="vendor" />
+					  </label>
+					</div>
+				</div>
 			  <div class="form-group">
-			    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+			    <label for="inputEmail" class="col-lg-2 control-label"><fmt:message key="email" /></label>
 			    <div class="col-lg-10">
 			      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="login">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+			    <label for="inputPassword" class="col-lg-2 control-label"><fmt:message key="password" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputPassword" placeholder="Password" name="password">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputFirstname" class="col-lg-2 control-label">Firstname</label>
+			    <label for="inputFirstname" class="col-lg-2 control-label"><fmt:message key="firstname" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" name="firstName">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputLastname" class="col-lg-2 control-label">Lastname</label>
+			    <label for="inputLastname" class="col-lg-2 control-label"><fmt:message key="lastname" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" name="lastName">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputStreet" class="col-lg-2 control-label">Street</label>
+			    <label for="inputStreet" class="col-lg-2 control-label"><fmt:message key="street" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputStreet" placeholder="Street" name="street">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputCity" class="col-lg-2 control-label">City</label>
+			    <label for="inputCity" class="col-lg-2 control-label"><fmt:message key="city" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputCity" placeholder="City" name="city">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputCode" class="col-lg-2 control-label">Code</label>
+			    <label for="inputCode" class="col-lg-2 control-label"><fmt:message key="zipcode" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputCode" placeholder="Code" name="psc">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputDescription" class="col-lg-2 control-label">Description</label>
+			    <label for="inputDescription" class="col-lg-2 control-label"><fmt:message key="description" /></label>
 			    <div class="col-lg-10">
 			      <textarea class="form-control" id="inputDescription" rows="3" name="popis"></textarea>
 			    </div>
 			  </div>
-			  
 	
 			  <div class="form-group">
 			    <div class="col-lg-offset-2 col-lg-10">
-			      <button type="submit" class="btn btn-default" value="Submit">Submit</button>
+			      <button type="submit" class="btn btn-default" value="Submit"><fmt:message key="submit" /></button>
 			    </div>
 			  </div>
 			</form>

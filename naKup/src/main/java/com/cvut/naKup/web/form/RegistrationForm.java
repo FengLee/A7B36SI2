@@ -1,20 +1,18 @@
 package com.cvut.naKup.web.form;
 
-import com.cvut.naKup.domain.Authority;
-
 public class RegistrationForm {
 	
 	private String firstName;
 	private String lastName;
 	private String login;
-	private String salt;
 	private String password;
 	private String street;
 	private String city;
 	private String psc;	
 	private String picture;
 	private String popis;
-	private Authority authority;
+	private boolean customer;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -32,12 +30,6 @@ public class RegistrationForm {
 	}
 	public void setLogin(String login) {
 		this.login = login;
-	}
-	public String getSalt() {
-		return salt;
-	}
-	public void setSalt(String salt) {
-		this.salt = salt;
 	}
 	public String getPassword() {
 		return password;
@@ -75,11 +67,11 @@ public class RegistrationForm {
 	public void setPopis(String popis) {
 		this.popis = popis;
 	}
-	public Authority getAuthority() {
-		return authority;
+	public boolean isCustomer() {
+		return customer;
 	}
-	public void setAuthority(Authority authority) {
-		this.authority = authority;
+	public void setCustomer(boolean customer) {
+		this.customer = customer;
 	}
 
 }
