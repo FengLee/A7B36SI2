@@ -16,6 +16,7 @@
 		  			<tr>
 		  				<th>Id</th>
 		  				<th>Jmeno</th>
+		  				<th></th>
 		  			</tr>
 		  		</thead>		  		
 		  		<tbody>		  				
@@ -23,10 +24,28 @@
 		  				<tr>
 		  					<td><c:out value="${item.getEntityId()}"/></td>
 		  					<td><c:out value="${item.getName()}"/></td>
+		  					<td><a data-toggle="modal" href="#myModal" class="btn btn-primary">Edit</a></td>
 		  				</tr>
 		  			</c:forEach>
 		  		</tbody>
 		  </table>
 		</div>
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          <h4 class="modal-title">Editace kategorie</h4>
+		        </div>
+		        <div class="modal-body">
+		          
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		          <button type="submit" class="btn btn-primary" ">Save changes</button>
+		        </div>
+		      </div><!-- /.modal-content -->
+		    </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 	</jsp:body>
 </t:content>

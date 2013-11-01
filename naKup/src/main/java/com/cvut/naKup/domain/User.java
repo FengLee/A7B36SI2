@@ -8,8 +8,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 
 import com.cvut.naKup.provider.HashProvider;
+import com.cvut.naKup.provider.SHA1Provider;
 /**
  * Table user
  * @author vavat
@@ -17,6 +19,7 @@ import com.cvut.naKup.provider.HashProvider;
  */
 @Entity
 @Table(name="Users")
+@Configurable(preConstruction=true)
 public class User extends NaKupEntity{
 	@Column(nullable = false)
 	private String firstName;
@@ -39,18 +42,28 @@ public class User extends NaKupEntity{
 	@Column(nullable = false)
 	private Authority authority;
 	
-	@OneToMany(mappedBy = "forWho")
+	@OneToMany
 	private List<PersonalMsg> messages;
-	@OneToMany(mappedBy = "forWho")
+	@OneToMany
 	private List<Comment> comments;
-	@OneToMany(mappedBy = "from")
-	private List<Order> buyOrders;
-	@OneToMany(mappedBy = "forWho")
-	private List<Order> sellOrders;
+	@OneToMany(mappedBy="forWho")
+	private List<Order> orders;
 	
 	@Autowired
 	private transient HashProvider hashProvider;	
 	
+	public String getSalt() {
+		return salt;
+	}
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
+	public HashProvider getHashProvider() {
+		return hashProvider;
+	}
+	public void setHashProvider(HashProvider hashProvider) {
+		this.hashProvider = hashProvider;
+	}
 	public String getFirstName() {		
 		return firstName;
 	}
@@ -103,6 +116,9 @@ public class User extends NaKupEntity{
 		return password;
 	}
 	public void setPassword(String password) {
+		if(this.hashProvider == null){
+			setHashProvider(new SHA1Provider());
+		}
 		this.salt = hashProvider.computeHash(System.nanoTime() + "");
         this.password = hashProvider.computeHash(password + salt);
 	}
@@ -116,13 +132,7 @@ public class User extends NaKupEntity{
             return true;
         }
         return false;
-    }
-	public HashProvider getHashProvider() {
-		return hashProvider;
-	}
-	public void setHashProvider(HashProvider hashProvider) {
-		this.hashProvider = hashProvider;
-	}
+    }	
 	public Authority getAuthority() {
 		return authority;
 	}
@@ -147,22 +157,12 @@ public class User extends NaKupEntity{
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
-	public List<Order> getBuyOrders() {
-		if(this.buyOrders == null){
-			this.buyOrders = new ArrayList<Order>();
-		}
-		return buyOrders;
+	public List<Order> getOrders() {
+		return orders;
 	}
-	public void setBuyOrders(List<Order> buyOrders) {
-		this.buyOrders = buyOrders;
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
-	public List<Order> getSellOrders() {
-		if(this.sellOrders == null){
-			this.sellOrders = new ArrayList<Order>();
-		}
-		return sellOrders;
-	}
-	public void setSellOrders(List<Order> sellOrders) {
-		this.sellOrders = sellOrders;
-	}		
+	
+			
 }

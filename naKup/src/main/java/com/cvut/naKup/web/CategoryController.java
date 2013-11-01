@@ -17,17 +17,17 @@ import com.cvut.naKup.service.CategoryService;
  */
 @Controller
 public class CategoryController {
-	
+		
 	@Autowired
 	private CategoryService categoryService;
-	
+
 	@RequestMapping("/categories")
 	public String category(ModelMap model){
 		List<Category> res = categoryService.getAll();
 		model.put("listCategory", res);
 		return "categories";
 	}
-
+		
 	public void setCategoryService(CategoryService categoryService) {
 		this.categoryService = categoryService;
 	}
