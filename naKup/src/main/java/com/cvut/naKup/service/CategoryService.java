@@ -12,6 +12,8 @@ import com.cvut.naKup.domain.Goods;
  */
 public interface CategoryService {
 	
+	public Category getById(Long id);
+	
 	public Long save(Category c);
 	
 	public void update(Category c);

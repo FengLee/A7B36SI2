@@ -15,7 +15,7 @@
 				  <h1><fmt:message key="register" /></h1>
 				</div>
 				<div class="form-group">
-					<label for="userTypeRadios1" class="col-lg-2 control-label"><fmt:message key="userType" /></label>
+					<label for="userTypeRadios1" class="col-lg-2 control-label"><fmt:message key="register.userType" /></label>
 					<div class="radio-inline">
 					  <label>
 					    <input type="radio" name="customer" id="userTypeRadios1" value="true" checked>
@@ -42,37 +42,37 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputFirstname" class="col-lg-2 control-label"><fmt:message key="firstname" /></label>
+			    <label for="inputFirstname" class="col-lg-2 control-label"><fmt:message key="register.firstname" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname" name="firstName">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputLastname" class="col-lg-2 control-label"><fmt:message key="lastname" /></label>
+			    <label for="inputLastname" class="col-lg-2 control-label"><fmt:message key="register.lastname" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputLastname" placeholder="Lastname" name="lastName">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputStreet" class="col-lg-2 control-label"><fmt:message key="street" /></label>
+			    <label for="inputStreet" class="col-lg-2 control-label"><fmt:message key="register.street" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputStreet" placeholder="Street" name="street">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputCity" class="col-lg-2 control-label"><fmt:message key="city" /></label>
+			    <label for="inputCity" class="col-lg-2 control-label"><fmt:message key="register.city" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputCity" placeholder="City" name="city">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputCode" class="col-lg-2 control-label"><fmt:message key="zipcode" /></label>
+			    <label for="inputCode" class="col-lg-2 control-label"><fmt:message key="register.zipcode" /></label>
 			    <div class="col-lg-10">
 			      <input type="text" class="form-control" id="inputCode" placeholder="Code" name="psc">
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <label for="inputDescription" class="col-lg-2 control-label"><fmt:message key="description" /></label>
+			    <label for="inputDescription" class="col-lg-2 control-label"><fmt:message key="register.desctiption.field" /></label>
 			    <div class="col-lg-10">
 			      <textarea class="form-control" id="inputDescription" rows="3" name="popis"></textarea>
 			    </div>

@@ -12,6 +12,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			classpath:naKup-core.xml
+			classpath:naKup-security.xml
 		</param-value>
 	</context-param>
 	
@@ -20,6 +21,16 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+	
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<servlet-name>naKup</servlet-name>
+	</filter-mapping>
 	
 	<servlet>
 		<servlet-name>naKup</servlet-name>

@@ -33,4 +33,9 @@ public class GoodsServiceImpl implements GoodsService {
 		return res;
 	}
 
+	@Override
+	public Goods getById(Long id) {		
+		return goodsdao.findById(id);
+	}
+
 }

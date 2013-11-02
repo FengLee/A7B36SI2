@@ -11,6 +11,8 @@ import com.cvut.naKup.domain.Goods;
  */
 public interface GoodsService {
 	
+	public Goods getById(Long id);
+	
 	public Long save(Goods g);
 	
 	public Long update(Goods g);
