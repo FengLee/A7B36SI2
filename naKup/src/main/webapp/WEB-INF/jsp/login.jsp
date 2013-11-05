@@ -11,55 +11,7 @@
 				${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 			</div>
 		</c:if>
- 
-<%-- 		<form name='f' action="<c:url value='j_spring_security_check' />" --%>
-<!-- 			method='POST'> -->
-	 
-<%-- 			<table> --%>
-<%-- 				<tr> --%>
-<%-- 					<td>User:</td> --%>
-<%-- 					<td><input type='text' name='j_username' value=''> --%>
-<%-- 					</td> --%>
-<%-- 				</tr> --%>
-<%-- 				<tr> --%>
-<%-- 					<td>Password:</td> --%>
-<%-- 					<td><input type='password' name='j_password' /> --%>
-<%-- 					</td> --%>
-<%-- 				</tr> --%>
-<%-- 				<tr> --%>
-<%-- 					<td colspan='2'><input name="submit" type="submit" --%>
-<!-- 						value="submit" /> -->
-<%-- 					</td> --%>
-<%-- 				</tr> --%>
-<%-- 				<tr> --%>
-<%-- 					<td colspan='2'><input name="reset" type="reset" /> --%>
-<%-- 					</td> --%>
-<%-- 				</tr> --%>
-<%-- 			</table> --%>
-	 
-<!-- 		</form> -->
-
-<!-- 		<div class="container"> -->
-<!-- 		    <div class="content"> -->
-<!-- 		      <div class="row"> -->
-<!-- 		        <div class="login-form"> -->
-<!-- 		          <h2>Login</h2> -->
-<%-- 		          <form action="<c:url value='j_spring_security_check' />" method='POST'> --%>
-<!-- 		            <fieldset> -->
-<!-- 		              <div class="clearfix"> -->
-<!-- 		                <input type="text" placeholder="Username" name='j_username'> -->
-<!-- 		              </div> -->
-<!-- 		              <div class="clearfix"> -->
-<!-- 		                <input type="password" placeholder="Password" name='j_password'> -->
-<!-- 		              </div> -->
-<!-- 		              <button name="submit" class="btn btn-primary" type="submit" value="submit">Sign in</button> -->
-<!-- 		            </fieldset> -->
-<!-- 		          </form> -->
-<!-- 		        </div> -->
-<!-- 		      </div> -->
-<!-- 		    </div> -->
-<!-- 		  </div> /container -->
-		  
+		
 		  <div class="container">
 			  <form class="form-horizontal" action="<c:url value='j_spring_security_check' />" method='POST'>
 				  <div class="form-group">
