@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,7 +21,11 @@ import com.cvut.naKup.provider.SHA1Provider;
 @Entity
 @Table(name="Users")
 @Configurable(preConstruction=true)
+@NamedQuery(name = User.FIND_BY_LOGIN, query = "SELECT u FROM User u WHERE u.login = (:login)")
 public class User extends NaKupEntity{
+	
+	public static final String FIND_BY_LOGIN = "User.findByLogin";
+	
 	@Column(nullable = false)
 	private String firstName;
 	@Column(nullable = false)
@@ -59,6 +64,9 @@ public class User extends NaKupEntity{
 		this.salt = salt;
 	}
 	public HashProvider getHashProvider() {
+		if(this.hashProvider == null){
+			this.setHashProvider(new SHA1Provider());
+		}
 		return hashProvider;
 	}
 	public void setHashProvider(HashProvider hashProvider) {
@@ -116,11 +124,8 @@ public class User extends NaKupEntity{
 		return password;
 	}
 	public void setPassword(String password) {
-		if(this.hashProvider == null){
-			setHashProvider(new SHA1Provider());
-		}
-		this.salt = hashProvider.computeHash(System.nanoTime() + "");
-        this.password = hashProvider.computeHash(password + salt);
+		this.salt = getHashProvider().computeHash(System.nanoTime() + "");
+        this.password = getHashProvider().computeHash(password + salt);
 	}
 	/**
 	 * Compare password from input with password in table 
@@ -128,7 +133,7 @@ public class User extends NaKupEntity{
 	 * @return true if password is correct, false if incorrect
 	 */
 	public boolean hasPassword(String password){
-        if(hashProvider.computeHash(password + salt).equals(this.password)){
+        if(getHashProvider().computeHash(password + salt).equals(this.password)){
             return true;
         }
         return false;
