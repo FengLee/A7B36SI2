@@ -8,8 +8,12 @@
 	
 	<c:if test="${pageContext['request'].userPrincipal != null}">
 		<fmt:message key="loggedUserFrame.user" />:
-		<b><sec:authentication property="principal.username" /></b>
-		<a href="<c:url value="/j_spring_security_logout" />" > <fmt:message key="loggedUserFrame.logout" /></a>
+		<b><sec:authentication property="principal" /></b>
+		
+		<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-default">
+			<span class="glyphicon glyphicon-log-out"></span>
+			<fmt:message key="loggedUserFrame.logout" />
+		</a>
 	</c:if>
 	<c:if test="${pageContext['request'].userPrincipal == null}">
 		<a href="<c:url value="/login" />" class="btn btn-primary btn-lg"><fmt:message key="loggedUserFrame.login" /></a>

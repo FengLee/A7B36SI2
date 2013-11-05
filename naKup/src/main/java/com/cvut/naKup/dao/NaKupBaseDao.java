@@ -1,6 +1,7 @@
 package com.cvut.naKup.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 
@@ -64,5 +65,14 @@ public interface NaKupBaseDao<T extends NaKupEntity> {
 	 * @return
 	 */
 	public Long getCount();
+	
+	/**
+	 * Returns list of entities by query.
+	 * 
+	 * @param queryString name of query to use.
+	 * @param values parameters f query.
+	 * @return
+	 */
+	public List<T> find(final String queryString, final Map<String, Object> values);
 
 }

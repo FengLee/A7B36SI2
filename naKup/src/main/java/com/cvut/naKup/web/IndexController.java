@@ -1,6 +1,5 @@
 package com.cvut.naKup.web;
 
-import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +21,12 @@ public class IndexController {
 	private GoodsService goodsService;
 	
 	@RequestMapping("/")
-	public String index(ModelMap model, Principal principal){
-		if (principal != null) {
-			String name = principal.getName();
-			model.addAttribute("username", name);
-		}
-		
+	public String index(ModelMap model) {
 		List<Goods> res = goodsService.getAll();
 		model.put("listGoods", res);
 		return "index";
 	}	
 	
-	public GoodsService getGoodsService() {
-		return goodsService;
-	}
-
 	public void setGoodsService(GoodsService goodsService) {
 		this.goodsService = goodsService;
 	}

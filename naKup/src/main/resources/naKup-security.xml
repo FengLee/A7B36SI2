@@ -16,11 +16,7 @@
 	</http>
  
 	<authentication-manager>
-	  <authentication-provider>
-		<user-service>
-			<user name="marek" password="aaaa" authorities="ROLE_USER" />
-		</user-service>
-	  </authentication-provider>
+		<authentication-provider ref="naKupAuthenticationProvider"/>
 	</authentication-manager>
  
 </beans:beans>

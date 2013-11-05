@@ -1,9 +1,11 @@
 package com.cvut.naKup.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -92,6 +94,18 @@ public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
 		Root<T> root = cQuery.from(entity);
 		cQuery.select(cBuilder.count(root));
 		return getEntityManager().createQuery(cQuery).getSingleResult();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<T> find(String queryString, Map<String, Object> values) {
+		Query query = getEntityManager().createNamedQuery(queryString);
+		if (values != null) {
+			for (Map.Entry<String, Object> e : values.entrySet()) {
+				query.setParameter(e.getKey(), e.getValue());
+			}
+		}
+		return query.getResultList();
 	}
 
 }

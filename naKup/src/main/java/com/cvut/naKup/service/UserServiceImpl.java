@@ -36,6 +36,11 @@ public class UserServiceImpl implements UserService {
 		return userDao.persist(user);
 	}
 
+	@Override
+	public User findById(Long userId) {
+		return userDao.findById(userId);
+	}
+
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
