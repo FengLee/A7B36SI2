@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.cvut.naKup.domain.Goods;
 import com.cvut.naKup.service.GoodsService;
+
 /**
+ * Controller of homepage.
  * 
  * @author vavat
- *
  */
 @Controller
 public class IndexController {
 	
+	/**
+	 * {@link GoodsService} for obtaining data about goods.
+	 */
 	@Autowired
 	private GoodsService goodsService;
 	

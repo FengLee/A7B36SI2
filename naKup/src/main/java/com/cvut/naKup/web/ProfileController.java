@@ -13,12 +13,27 @@ import com.cvut.naKup.domain.User;
 import com.cvut.naKup.service.UserService;
 import com.cvut.naKup.web.form.RegistrationForm;
 
+/**
+ * Controller of profile page.
+ * 
+ * @author Marek Cech
+ */
 @Controller
 public class ProfileController {
 	
+	/**
+	 * {@link UserService} for obtaining data about users.
+	 */
 	@Autowired
 	private UserService userService;
 	
+	/**
+	 * Method for showing profile page.
+	 * 
+	 * @param userId Id of {@link User}.
+	 * @param model {@link ModelMap} to put attributes to.
+	 * @return
+	 */
 	@RequestMapping(value="/profile/{userId}", method = RequestMethod.GET)
 	public String showPage(@PathVariable Long userId, ModelMap model) {
 		User user = userService.findById(userId);
@@ -26,6 +41,13 @@ public class ProfileController {
 		return "profile";
 	}
 	
+	/**
+	 * Method for showing profile editation page.
+	 * 
+	 * @param userId Id of {@link User}.
+	 * @param model {@link ModelMap} to put attributes to.
+	 * @return
+	 */
 	@RequestMapping(value="/profile/{userId}/edit", method = RequestMethod.GET)
 	public ModelAndView editProfile(@PathVariable Long userId, ModelMap model) {
 		ModelAndView mav = new ModelAndView("profileEditation", "command", new RegistrationForm());
@@ -34,6 +56,13 @@ public class ProfileController {
 		return mav;
 	}
 	
+	/**
+	 * Method for handling editation requests.
+	 * 
+	 * @param userId Id of {@link User}.
+	 * @param form {@link RegistrationForm} with edited data.
+	 * @return
+	 */
 	@RequestMapping(value="/profile/{userId}/edit", method = RequestMethod.POST)
 	public String editProfile(@PathVariable Long userId, @ModelAttribute("SpringWeb") RegistrationForm form) {
 		userService.updateUser(form, userId);

@@ -96,6 +96,9 @@ public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
 		return getEntityManager().createQuery(cQuery).getSingleResult();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> find(String queryString, Map<String, Object> values) {

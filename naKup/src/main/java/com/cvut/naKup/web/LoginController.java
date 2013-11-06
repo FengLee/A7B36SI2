@@ -5,6 +5,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+/**
+ * Controller of login page.
+ * 
+ * @author Marek Cech
+ */
 @Controller
 public class LoginController {
 	
@@ -14,6 +19,12 @@ public class LoginController {
 		return "login";
 	}
  
+	/**
+	 * Method for handling login errors.
+	 * 
+	 * @param model {@link ModelMap} to put attributes to.
+	 * @return
+	 */
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
 		model.addAttribute("error", "true");
@@ -21,6 +32,12 @@ public class LoginController {
  
 	}
  
+	/**
+	 * Method for logout handling.
+	 * 
+	 * @param model {@link ModelMap} to put attributes to.
+	 * @return
+	 */
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model) {
 		return "login";

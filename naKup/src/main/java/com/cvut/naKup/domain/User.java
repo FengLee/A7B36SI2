@@ -126,11 +126,6 @@ public class User extends NaKupEntity{
 	public void setPassword(String password) {
 		this.salt = getHashProvider().computeHash(System.nanoTime() + "");
         this.password = getHashProvider().computeHash(password + salt);
-		if(this.hashProvider == null){
-			setHashProvider(new SHA1Provider());
-		}
-		this.salt = hashProvider.computeHash(System.nanoTime() + "");
-        this.password = hashProvider.computeHash(password + salt);
 	}
 	/**
 	 * Compare password from input with password in table 

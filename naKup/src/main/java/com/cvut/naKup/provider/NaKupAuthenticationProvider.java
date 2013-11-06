@@ -1,4 +1,4 @@
-package com.cvut.naKup.security;
+package com.cvut.naKup.provider;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,12 +17,23 @@ import org.springframework.stereotype.Component;
 import com.cvut.naKup.dao.UserDao;
 import com.cvut.naKup.domain.User;
 
+/**
+ * Implementation of {@link AuthenticationProvider} for custom authentication.
+ * 
+ * @author Marek Cech
+ */
 @Component("naKupAuthenticationProvider")
 public class NaKupAuthenticationProvider implements AuthenticationProvider {
 	
+	/**
+	 * {@link UserDao} for obtaining data about users.
+	 */
 	@Autowired
 	private UserDao userDao;
 
+	/**
+	 * Custom implementation of authentication method.
+	 */
 	@Override
 	public Authentication authenticate(Authentication authentication)
 			throws AuthenticationException {
@@ -49,6 +60,9 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 		return null;
 	}
 
+	/**
+	 * Method for checking which class of token provider requires.
+	 */
 	@Override
 	public boolean supports(Class<?> authentication) {
 		return authentication.equals(UsernamePasswordAuthenticationToken.class);

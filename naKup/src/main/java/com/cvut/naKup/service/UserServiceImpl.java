@@ -9,13 +9,24 @@ import com.cvut.naKup.domain.Authority;
 import com.cvut.naKup.domain.User;
 import com.cvut.naKup.web.form.RegistrationForm;
 
+/**
+ * Implementation of {@link UserService}.
+ * 
+ * @author Marek Cech
+ */
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
 	
+	/**
+	 * {@link UserDao} for obtaining data about users.
+	 */
 	@Autowired
 	private UserDao userDao;
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Long addUser(RegistrationForm form) {
 		User user = new User();
@@ -36,6 +47,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.persist(user);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public void updateUser(RegistrationForm form, Long userId) {
 		User user = userDao.findById(userId);
@@ -48,6 +62,9 @@ public class UserServiceImpl implements UserService {
 		userDao.update(user);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public User findById(Long userId) {
 		return userDao.findById(userId);

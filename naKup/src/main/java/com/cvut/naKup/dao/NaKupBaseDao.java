@@ -10,7 +10,7 @@ import com.cvut.naKup.domain.NaKupEntity;
 /**
  * NaKup base for dao interfaces.
  * 
- * @author marek cech
+ * @author Marek Cech
  *
  */
 public interface NaKupBaseDao<T extends NaKupEntity> {
