@@ -37,6 +37,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public void updateUser(RegistrationForm form, Long userId) {
+		User user = userDao.findById(userId);
+		user.setFirstName(form.getFirstName());
+		user.setLastName(form.getLastName());
+		user.setStreet(form.getStreet());
+		user.setCity(form.getCity());
+		user.setPsc(form.getPsc());
+		user.setPopis(form.getPopis());
+		userDao.update(user);
+	}
+
+	@Override
 	public User findById(Long userId) {
 		return userDao.findById(userId);
 	}

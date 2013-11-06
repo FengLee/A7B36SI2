@@ -7,6 +7,8 @@ public interface UserService {
 
 	public Long addUser(RegistrationForm form);
 	
+	public void updateUser(RegistrationForm form, Long userId);
+	
 	public User findById(Long userId);
 	
 }

@@ -3,11 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<sec:authentication property="principal" var="principal"/>
+
 
 <t:content>
 	<jsp:body>
@@ -19,18 +18,7 @@
 						<h3><fmt:message key="profile.title"/></h3>
 					</div>
 					<div class="panel-body row">
-						<c:if test="${user.login == principal}">
-						    <div class="list-group col-xs-4 menu-left">
-								<a href="#" class="list-group-item"><fmt:message key="profile.edit.profile"/></a>
-								<a href="#" class="list-group-item"><fmt:message key="profile.edit.products"/></a>
-								<a href="#" class="list-group-item"><fmt:message key="profile.edit.orders"/></a>
-							</div>
-						</c:if>
-						<c:if test="${user.login != principal}">
-						    <div class="list-group col-xs-4 menu-left">
-								<a href="#" class="list-group-item"><fmt:message key="profile.send.message"/></a>
-							</div>
-						</c:if>
+						<jsp:include page="/WEB-INF/jsp/includes/profileMenu.jsp" />
 						<div class="col-xs-4">
 							<div class="row">
 								<div class="col-xs-4">
@@ -64,8 +52,6 @@
 				</div>
 			</div>
 		</div>
-		
-		
 		
 	</jsp:body>
 </t:content>
