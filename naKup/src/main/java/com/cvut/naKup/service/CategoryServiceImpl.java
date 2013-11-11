@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cvut.naKup.dao.CategoryDao;
 import com.cvut.naKup.domain.Category;
 import com.cvut.naKup.domain.Goods;
 
 @Service
+@Transactional
 public class CategoryServiceImpl implements CategoryService{
 	
 	@Autowired

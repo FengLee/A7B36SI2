@@ -9,7 +9,7 @@
     <div class="list-group col-xs-4 menu-left">
 		<a href="/naKup/profile/${user.entityId}/edit" class="list-group-item"><fmt:message key="profile.edit.profile"/></a>
 		<a href="#" class="list-group-item"><fmt:message key="profile.edit.products"/></a>
-		<a href="#" class="list-group-item"><fmt:message key="profile.edit.orders"/></a>
+		<a href="/naKup/profile/${user.entityId}/orders" class="list-group-item"><fmt:message key="profile.edit.orders"/></a>
 	</div>
 </c:if>
 <c:if test="${user.login != principal}">

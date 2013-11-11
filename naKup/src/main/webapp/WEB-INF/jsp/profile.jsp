@@ -35,7 +35,7 @@
 								<div class="col-xs-4">
 									${user.street}<p>
 									${user.city}<p>
-									${user.psc}
+									${user.zip}
 								</div>
 							</div>
 							<div class="row">
@@ -43,7 +43,7 @@
 									<fmt:message key="profile.description"/>:
 								</div>
 								<div class="col-xs-4">
-									${user.popis}
+									${user.description}
 								</div>
 							</div>
 						</div>

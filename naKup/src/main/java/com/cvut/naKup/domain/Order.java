@@ -1,5 +1,6 @@
 package com.cvut.naKup.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -26,6 +27,17 @@ public class Order extends NaKupEntity{
 	@ManyToMany
 	private List<Goods> goods;
 	
+	public List<Goods> getGoods() {
+		if(this.goods == null){
+			this.goods = new ArrayList<Goods>();
+		}
+		return goods;
+	}
+
+	public void setGoods(List<Goods> goods) {
+		this.goods = goods;
+	}
+
 	public double getWeight() {
 		return weight;
 	}
