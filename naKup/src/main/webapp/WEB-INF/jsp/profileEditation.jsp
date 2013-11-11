@@ -7,12 +7,9 @@
 <t:content>
 	<jsp:body>
 		
-		<div class="container">
-			<div class="page-body">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3><fmt:message key="profile.title"/></h3>
-					</div>
+		
+					<h3><fmt:message key="profile.title"/></h3>
+					
 					<div class="panel-body row">
 						<jsp:include page="/WEB-INF/jsp/includes/profileMenu.jsp" />
 						<div class="col-xs-12 col-sm-6 col-md-8">
@@ -63,9 +60,6 @@
 							</form>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
 		
 	</jsp:body>
 </t:content>
