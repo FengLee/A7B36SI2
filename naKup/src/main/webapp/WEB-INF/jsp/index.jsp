@@ -59,7 +59,7 @@
 				<div class="col-md-4 col-md-offset-4">
 					<div class="row">
 						<div class="col-md-4">
-							<p>Nazev:</p>
+							<p><fmt:message key="goods.name"/></p>
 						</div>
 						<div class="col-md-2 col-md-offset-3">
 							<p>Jablko</p>
@@ -67,7 +67,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-4">
-							<p>Cena:</p>
+							<p><fmt:message key="goods.cost"/></p>
 						</div>
 						<div class="col-md-2 col-md-offset-3">
 							<p>60</p>
@@ -77,7 +77,7 @@
 			</div>			
 			<div class="row">
 				<div class="col-md-1">
-					<p>Popis:</p>
+					<p><fmt:message key="goods.desc"/></p>
 				</div>
 				<div class="col-md-4 col-md-offset-4">
 					<p>Blabla</p>	

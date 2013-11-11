@@ -11,13 +11,13 @@
 <t:content>
 	<jsp:body>
 		
-		<div class="container">
-			<div class="page-body">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						<h3><fmt:message key="orders.title"/></h3>
-					</div>
-					<div class="panel-body row">
+		
+			
+				
+					
+				<h3><fmt:message key="orders.title"/></h3>
+					
+					<div class="row">
 						<jsp:include page="/WEB-INF/jsp/includes/profileMenu.jsp" />
 						<div class="table-responsive">
 							<div class="col-xs-4">
@@ -40,9 +40,9 @@
 							</div>
 						</div>						
 					</div>
-				</div>
-			</div>
-		</div>
+				
+			
+		
 		
 	</jsp:body>
 </t:content>
