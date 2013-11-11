@@ -16,7 +16,7 @@
 		</param-value>
 	</context-param>
 	
-	<!-- Starts Spring application context. The parent one. The web context
+	<!-- Starts Spring application context. The web context
 			is started by Dispatcher servlet. --> 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

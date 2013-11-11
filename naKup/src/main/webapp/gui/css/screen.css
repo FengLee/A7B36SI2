@@ -4,3 +4,12 @@
 	width:200px;
 	padding-left: 20px;
 }
+
+.page-header-left {
+	padding-left: 20px;
+}
+
+.page-header-right {
+	padding-right: 20px;
+	padding-top: 3px;
+}

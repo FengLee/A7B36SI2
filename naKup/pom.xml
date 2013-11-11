@@ -93,7 +93,7 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 		
-		<!-- github -->
+		<!-- Heroku -->
 		<dependency>
             <groupId>com.github.jsimone</groupId>
             <artifactId>webapp-runner</artifactId>
