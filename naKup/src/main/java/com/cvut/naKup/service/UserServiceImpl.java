@@ -41,8 +41,8 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(form.getPassword());
 		user.setStreet(form.getStreet());
 		user.setCity(form.getCity());
-		user.setPsc(form.getPsc());
-		user.setPopis(form.getPopis());
+		user.setZip(form.getPsc());
+		user.setDescription(form.getPopis());
 		
 		return userDao.persist(user);
 	}
@@ -57,8 +57,8 @@ public class UserServiceImpl implements UserService {
 		user.setLastName(form.getLastName());
 		user.setStreet(form.getStreet());
 		user.setCity(form.getCity());
-		user.setPsc(form.getPsc());
-		user.setPopis(form.getPopis());
+		user.setZip(form.getPsc());
+		user.setDescription(form.getPopis());
 		userDao.update(user);
 	}
 

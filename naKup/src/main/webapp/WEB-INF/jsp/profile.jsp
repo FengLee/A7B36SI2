@@ -40,6 +40,36 @@
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-8">
 						${user.description}
+					<div class="panel-body row">
+						<jsp:include page="/WEB-INF/jsp/includes/profileMenu.jsp" />
+						<div class="col-xs-4">
+							<div class="row">
+								<div class="col-xs-4">
+									<fmt:message key="profile.username"/>:
+								</div>
+								<div class="col-xs-4">
+									${user.firstName} ${user.lastName}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<fmt:message key="profile.address"/>:
+								</div>
+								<div class="col-xs-4">
+									${user.street}<p>
+									${user.city}<p>
+									${user.zip}
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<fmt:message key="profile.description"/>:
+								</div>
+								<div class="col-xs-4">
+									${user.description}
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

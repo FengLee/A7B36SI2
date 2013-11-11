@@ -41,9 +41,9 @@ public class User extends NaKupEntity{
 	@Column(nullable = false)
 	private String city;
 	@Column(nullable = false)
-	private String psc;	
+	private String zip;	
 	private String picture;
-	private String popis;
+	private String description;	
 	@Column(nullable = false)
 	private Authority authority;
 	
@@ -95,19 +95,7 @@ public class User extends NaKupEntity{
 	}
 	public void setCity(String city) {
 		this.city = city;
-	}
-	public String getPsc() {
-		return psc;
-	}
-	public void setPsc(String psc) {
-		this.psc = psc;
-	}
-	public String getPopis() {
-		return popis;
-	}
-	public void setPopis(String popis) {
-		this.popis = popis;
-	}
+	}	
 	public String getPicture() {
 		return picture;
 	}
@@ -137,7 +125,19 @@ public class User extends NaKupEntity{
             return true;
         }
         return false;
-    }	
+    }
+	public String getZip() {
+		return zip;
+	}
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public Authority getAuthority() {
 		return authority;
 	}
@@ -163,6 +163,9 @@ public class User extends NaKupEntity{
 		this.comments = comments;
 	}
 	public List<Order> getOrders() {
+		if(this.orders == null){
+			this.orders = new ArrayList<Order>();
+		}
 		return orders;
 	}
 	public void setOrders(List<Order> orders) {

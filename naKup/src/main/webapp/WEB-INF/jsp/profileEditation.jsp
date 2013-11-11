@@ -44,13 +44,13 @@
 								<div class="form-group">
 									<label for="inputCode" class="col-lg-2 control-label"><fmt:message key="register.zipcode" /></label>
 									<div class="col-xs-12 col-sm-6 col-md-8">
-										<input type="text" class="form-control" id="inputCode" name="psc" value="${user.psc}">
+										<input type="text" class="form-control" id="inputCode" name="psc" value="${user.zip}">
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="inputDescription" class="col-lg-2 control-label"><fmt:message key="register.desctiption.field" /></label>
 									<div class="col-xs-12 col-sm-6 col-md-8">
-										<textarea class="form-control" id="inputDescription" rows="3" name="popis">${user.popis}</textarea>
+										<textarea class="form-control" id="inputDescription" rows="3" name="popis">${user.description}</textarea>
 									</div>
 								</div>
 								
