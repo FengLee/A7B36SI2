@@ -30,7 +30,7 @@ public class User extends NaKupEntity{
 	private String firstName;
 	@Column(nullable = false)
 	private String lastName;
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String login;
 	@Column(length = 40, nullable = false)
 	private String salt;
