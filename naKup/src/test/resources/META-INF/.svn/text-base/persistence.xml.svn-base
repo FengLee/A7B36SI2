@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+  <persistence-unit name="SnowMirrorTestPU">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.solidservision.snowMirror.domain.identity.UserEntity</class>
+    <class>com.solidservision.snowMirror.domain.identity.RoleEntity</class>
+    <class>com.solidservision.snowMirror.domain.identity.PermissionEntity</class>
+    <class>com.solidservision.snowMirror.domain.synchronization.SynchronizationEntity</class>
+    <class>com.solidservision.snowMirror.domain.synchronization.SynchronizationViewEntity</class>
+    <class>com.solidservision.snowMirror.domain.synchronization.SchedulerEntity</class>
+    <class>com.solidservision.snowMirror.domain.snow.SnowTableEntity</class>
+    <class>com.solidservision.snowMirror.domain.snow.SnowViewEntity</class>
+    <class>com.solidservision.snowMirror.domain.snow.SnowColumnEntity</class>
+    <class>com.solidservision.snowMirror.domain.activity.ActivityLogEntity</class>
+    <class>com.solidservision.snowMirror.domain.notification.NotificationEntity</class>
+
+    <properties>
+        <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+        <property name="hibernate.cache.use_query_cache" value="true" />
+        <property name="hibernate.cache.use_second_level_cache" value="true" />
+    </properties>
+  </persistence-unit>
+
+</persistence>
