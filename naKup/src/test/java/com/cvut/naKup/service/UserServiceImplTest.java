@@ -1,8 +1,9 @@
 package com.cvut.naKup.service;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -24,12 +25,14 @@ public class UserServiceImplTest extends NaKupTest {
 	@Autowired
 	UserService userService;
 	
+	private RegistrationForm form;
+	
 	/**
-	 * This method tests new user adding.
+	 * Preparation method.
 	 */
-	@Test
-	public void testAddUser() {
-		RegistrationForm form = new RegistrationForm();
+	@Before
+	public void setUp() {
+		form = new RegistrationForm();
 		form.setFirstName("Jan");
 		form.setLastName("Novak");
 		form.setLogin("a@b.cz");
@@ -38,13 +41,53 @@ public class UserServiceImplTest extends NaKupTest {
 		form.setCity("Lhota");
 		form.setPsc("12345");
 		form.setCustomer(true);
+		form.setPopis("popis");
 		
+	}
+	
+	/**
+	 * This method tests new user adding.
+	 */
+	@Test
+	public void testAddUser() {
 		Long id = userService.addUser(form);
-		assertTrue(id != null);
+		assertNotNull(id);
 		
 		User user = userService.findById(id);
 		assertEquals(form.getFirstName(), user.getFirstName());
+		assertEquals(form.getLastName(), user.getLastName());
+		assertEquals(form.getLogin(), user.getLogin());
+		assertEquals(form.getStreet(), user.getStreet());
+		assertEquals(form.getCity(), user.getCity());
+		assertEquals(form.getPsc(), user.getZip());
+		assertEquals(form.getPopis(), user.getDescription());
 		assertEquals(Authority.Buyer, user.getAuthority());
+	}
+	
+	/**
+	 * This method tests updating user.
+	 */
+	@Test
+	public void testUpdateUser() {
+		Long id = userService.addUser(form);
+		assertNotNull(id);
+		
+		form.setFirstName("Honzik");
+		form.setLastName("Novaku");
+		form.setStreet("Nejdelsi 23");
+		form.setCity("Dlouha lhota");
+		form.setPsc("12340");
+		form.setPopis("dlouhy popis");
+		
+		userService.updateUser(form, id);
+		User updated = userService.findById(id);
+		
+		assertEquals(form.getFirstName(), updated.getFirstName());
+		assertEquals(form.getLastName(), updated.getLastName());
+		assertEquals(form.getStreet(), updated.getStreet());
+		assertEquals(form.getCity(), updated.getCity());
+		assertEquals(form.getPsc(), updated.getZip());
+		assertEquals(form.getPopis(), updated.getDescription());
 	}
 	
 }
