@@ -22,7 +22,7 @@ public class Goods extends NaKupEntity{
 	private Category category;
 	
 	@ManyToOne
-	private User user;
+	private User vendor;
 	
 	public String getName() {
 		return name;
@@ -48,4 +48,17 @@ public class Goods extends NaKupEntity{
 	public void setText(String text) {
 		this.text = text;
 	}
+	public User getVendor() {
+		return vendor;
+	}
+	public void setVendor(User vendor) {
+		this.vendor = vendor;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
 }
