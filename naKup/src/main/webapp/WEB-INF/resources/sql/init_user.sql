@@ -1,0 +1,4 @@
+insert into users (id,authority,city,description,firstname,lastname,login,password,picture,salt,street,zip) values (1,1,'Praha 5 - Radotín','Jsem velice šikovný prodejce.','Pepa','Vošáhlík','a@b.cz','096de7d7bb144af947acbf71f831cf9832aee2ba','','480b79b0120db6e63368d8d36beb2636ebe4e6f0','Vykoukových 23',15300);
+insert into users (id,authority,city,description,firstname,lastname,login,password,picture,salt,street,zip) values (2,0,'Praha 5 - Lipence','Okrádám zákazníky.','Jan','Novák','c@d.cz','2f3f68012bafdb2323f371ad07f0a9c6ae139a41','','7988e55892b7db6ea0dffce0e1b350242fb56da0','Luční 13',15200);
+
+INSERT INTO hibernate_sequences (sequence_name,sequence_next_hi_value) VALUES ('Users',2);

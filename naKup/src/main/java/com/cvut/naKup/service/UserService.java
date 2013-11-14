@@ -34,4 +34,11 @@ public interface UserService {
 	 */
 	public User findById(Long userId);
 	
+	/**
+	 * Method for updating {@link User}.
+	 * 
+	 * @param user {@link User} to update.
+	 */
+	public void update(User user);
+	
 }

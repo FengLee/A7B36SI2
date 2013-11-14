@@ -59,6 +59,22 @@
 		<property name="password" value="${password}" />
 	</bean>
 	
+	<bean id="dataBasePopulator" class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
+		<property name="scripts">
+			<list>
+				<value>WEB-INF/resources/sql/init_user.sql</value>
+				<value>WEB-INF/resources/sql/init_category.sql</value>
+				<value>WEB-INF/resources/sql/init_goods.sql</value>
+				<value>WEB-INF/resources/sql/init_category_category.sql</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
+	  <property name="dataSource" ref="dataSource"/>
+	  <property name="databasePopulator" ref="dataBasePopulator"/>
+	</bean>
+	
 	<!-- localization -->
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="WEB-INF/resources/messages/messages" />

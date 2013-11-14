@@ -21,6 +21,9 @@ public class Goods extends NaKupEntity{
 	@ManyToOne
 	private Category category;
 	
+	@ManyToOne
+	private User user;
+	
 	public String getName() {
 		return name;
 	}

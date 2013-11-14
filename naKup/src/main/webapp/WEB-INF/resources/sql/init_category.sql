@@ -1,0 +1,27 @@
+insert into category (id,name) values (1,'Ovoce');
+insert into category (id,name) values (2,'Jablka');
+insert into category (id,name) values (3,'Hrušky');
+insert into category (id,name) values (4,'Mandarinky');
+insert into category (id,name) values (5,'Zelenina');
+insert into category (id,name) values (6,'Řepa');
+insert into category (id,name) values (7,'Brambory');
+insert into category (id,name) values (8,'Nápoje');
+insert into category (id,name) values (9,'Nealkoholické');
+insert into category (id,name) values (10,'Mošty');
+insert into category (id,name) values (11,'Šťávy');
+insert into category (id,name) values (12,'Alkoholické');
+insert into category (id,name) values (13,'Vína');
+insert into category (id,name) values (14,'Červená');
+insert into category (id,name) values (15,'Bílá');
+insert into category (id,name) values (16,'Piva');
+insert into category (id,name) values (17,'Sýry');
+insert into category (id,name) values (18,'Uzeniny');
+insert into category (id,name) values (19,'Párky');
+insert into category (id,name) values (20,'Klobásy');
+insert into category (id,name) values (21,'Šunky');
+insert into category (id,name) values (22,'Pečivo');
+insert into category (id,name) values (23,'Rohlíky');
+insert into category (id,name) values (24,'Housky');
+insert into category (id,name) values (25,'Chleby');
+
+INSERT INTO hibernate_sequences (sequence_name,sequence_next_hi_value) VALUES ('Category',25);

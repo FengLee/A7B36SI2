@@ -69,6 +69,11 @@ public class UserServiceImpl implements UserService {
 	public User findById(Long userId) {
 		return userDao.findById(userId);
 	}
+	
+	@Override
+	public void update(User user) {
+		userDao.update(user);
+	}
 
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;

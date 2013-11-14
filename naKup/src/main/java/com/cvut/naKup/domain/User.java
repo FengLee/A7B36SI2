@@ -47,12 +47,15 @@ public class User extends NaKupEntity{
 	@Column(nullable = false)
 	private Authority authority;
 	
-	@OneToMany
+	@OneToMany(mappedBy="forWho")
 	private List<PersonalMsg> messages;
 	@OneToMany
 	private List<Comment> comments;
 	@OneToMany(mappedBy="forWho")
 	private List<Order> orders;
+	
+	@OneToMany
+	private List<Goods> goods;
 	
 	@Autowired
 	private transient HashProvider hashProvider;	
@@ -170,6 +173,15 @@ public class User extends NaKupEntity{
 	}
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+	public List<Goods> getGoods() {
+		if(this.goods == null){
+			this.goods = new ArrayList<Goods>();
+		}
+		return goods;
+	}
+	public void setGoods(List<Goods> goods) {
+		this.goods = goods;
 	}
 	
 			
