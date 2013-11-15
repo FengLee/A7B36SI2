@@ -54,7 +54,7 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 	    	List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
             grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
             
-            Authentication auth = new UsernamePasswordAuthenticationToken(login, password, grantedAuths);
+            Authentication auth = new NaKupAuthenticationToken(login, token.getCredentials(), grantedAuths, persistedUser.getEntityId());
             return auth;
 	    }
 		return null;

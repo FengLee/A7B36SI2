@@ -3,17 +3,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
+<c:set var="userId" value="<%=org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication().getDetails().toString()%>"/>
+
 <nav class="navbar navbar-default navbar-static-top" role="navigation">
 
 	<div class="navbar-left page-header-left">
-		<h3>NaKup lokalne</h3>
+		<a href="<c:url value="/" />" style="text-decoration:none;">
+			<h3>NaKup lokalne</h3>
+		</a>
 	</div>
 	
 	<div class="navbar-right page-header-right">
 		<c:if test="${pageContext['request'].userPrincipal != null}">
-			<fmt:message key="loggedUserFrame.user" />:
-			<b><sec:authentication property="principal" /></b>
 			
+			<a href="<c:url value="/profile/${userId}" />" class="btn btn-default navbar-btn">
+				<fmt:message key="loggedUserFrame.user" />:
+				<b><sec:authentication property="principal" /></b>
+			</a>
 			<a href="<c:url value="/j_spring_security_logout" />" class="btn btn-default navbar-btn">
 				<span class="glyphicon glyphicon-log-out"></span>
 				<fmt:message key="loggedUserFrame.logout" />
