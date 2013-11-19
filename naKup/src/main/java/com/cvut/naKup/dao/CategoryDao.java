@@ -11,5 +11,5 @@ import com.cvut.naKup.domain.Goods;
  *
  */
 public interface CategoryDao extends NaKupBaseDao<Category>{
-	public List<Goods> goodsInCategory(Category c);
+	public List<Goods> goodsInCategory(String c);
 }

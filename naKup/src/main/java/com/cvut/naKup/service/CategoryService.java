@@ -20,5 +20,5 @@ public interface CategoryService {
 	
 	public List<Category> getAll();
 	
-	public List<Goods> getAllGoodsInCategory(Category c);
+	public List<Goods> getAllGoodsInCategory(String c);
 }

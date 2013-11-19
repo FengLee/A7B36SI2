@@ -14,7 +14,8 @@ public class CategoryJpaDao extends NaKupJpaBaseDao<Category> implements Categor
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Goods> goodsInCategory(Category c){
-		return getEntityManager().createQuery("SELECT e FROM Goods e WHERE e.category = "+ c).getResultList();
+	public List<Goods> goodsInCategory(String c){
+		Category b = (Category) getEntityManager().createQuery("SELECT e FROM Category e WHERE e.name = ?").setParameter(1, c).getSingleResult();
+		return getEntityManager().createQuery("SELECT e FROM Goods e WHERE e.category = "+ b.getEntityId()).getResultList();
 	}
 }

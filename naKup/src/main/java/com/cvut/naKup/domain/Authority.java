@@ -5,5 +5,5 @@ package com.cvut.naKup.domain;
  *
  */
 public enum Authority {
-	Seller, Buyer, SellerBuyer, Admin 
+	Seller, Buyer, Admin 
 }

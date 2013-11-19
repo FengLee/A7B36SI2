@@ -15,6 +15,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import com.cvut.naKup.dao.UserDao;
+import com.cvut.naKup.domain.Authority;
 import com.cvut.naKup.domain.User;
 
 /**
@@ -52,8 +53,15 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 	    if (correctPassword) {
 	    	//TODO: handle NaKup user roles
 	    	List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
-            grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-            
+//            grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
+	    	grantedAuths.add(new SimpleGrantedAuthority(Authority.Seller.toString()));
+	    	if(persistedUser.getAuthority() == Authority.Buyer){
+	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Buyer.toString()));
+	    	}
+	    	if(persistedUser.getAuthority() == Authority.Admin){
+	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Buyer.toString()));
+	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Admin.toString()));
+	    	}
             Authentication auth = new NaKupAuthenticationToken(login, token.getCredentials(), grantedAuths, persistedUser.getEntityId());
             return auth;
 	    }
