@@ -1,5 +1,6 @@
 package com.cvut.naKup.service;
 
+import com.cvut.naKup.domain.Goods;
 import com.cvut.naKup.domain.User;
 import com.cvut.naKup.web.form.RegistrationForm;
 
@@ -40,5 +41,13 @@ public interface UserService {
 	 * @param user {@link User} to update.
 	 */
 	public void update(User user);
+	
+	/**
+	 * Method for obtaining {@link User} with his {@link Goods}.
+	 * 
+	 * @param userId Id of {@link User} to find.
+	 * @return {@link User} with fetched {@link Goods}.
+	 */
+	public User findByIdWithGoods(Long userId);
 	
 }

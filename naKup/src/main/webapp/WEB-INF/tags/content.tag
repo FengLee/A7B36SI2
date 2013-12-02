@@ -27,4 +27,5 @@
   	</footer>
   	<script src="${pageContext.request.contextPath}/bootstrap/js/jquery-1.10.2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+  	<script src="${pageContext.request.contextPath}/gui/js/scripts.js"></script>
 </html>

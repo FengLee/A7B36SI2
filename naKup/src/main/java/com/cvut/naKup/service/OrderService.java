@@ -1,5 +1,6 @@
 package com.cvut.naKup.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import com.cvut.naKup.domain.Goods;
@@ -7,7 +8,7 @@ import com.cvut.naKup.domain.Order;
 
 /**
  * 
- * @author vavat
+ * @author vavat, Marek Čech
  *
  */
 public interface OrderService {
@@ -46,4 +47,11 @@ public interface OrderService {
 	 * @return List of goods
 	 */
 	public List<Goods> goodsInOrder(Long id);
+	
+	/**
+	 * Method for processing basket.
+	 * 
+	 * @param basket {@link List} of {@link Goods} in basket.
+	 */
+	public void processBasket(Collection<Goods> basket, Long userId);
 }

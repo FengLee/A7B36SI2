@@ -6,6 +6,7 @@ import com.cvut.naKup.domain.User;
 
 /**
  * Implementation of {@link UserDao}.
+ * 
  * Extends {@link NaKupJpaBaseDao}.
  * 
  * @author Marek Cech

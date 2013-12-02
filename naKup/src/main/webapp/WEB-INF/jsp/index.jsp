@@ -43,6 +43,11 @@
 									<p><c:out value="${item.getText()}"/></p>	
 								</div>	
 							</div>
+							<div class="row">
+								<form action="<c:url value="/cart/add/${item.getEntityId()}" />" method="POST">
+									<input type="submit" value="Add to cart" class="btn btn-primary" />
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
