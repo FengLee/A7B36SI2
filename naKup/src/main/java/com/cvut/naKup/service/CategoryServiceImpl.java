@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cvut.naKup.dao.CategoryDao;
 import com.cvut.naKup.domain.Category;
 import com.cvut.naKup.domain.Goods;
+import com.cvut.naKup.web.form.CategoryForm;
 
 @Service
 @Transactional
@@ -18,12 +19,16 @@ public class CategoryServiceImpl implements CategoryService{
 	private CategoryDao categoryDao;
 	
 	@Override
-	public Long save(Category c) {		
+	public Long save(CategoryForm form) {
+		Category c = new Category();
+		c.setName(form.getName());
 		return categoryDao.persist(c);
 	}
 
 	@Override
-	public void update(Category c) {
+	public void update(String name, CategoryForm form) {
+		Category c = categoryDao.getByName(name);
+		c.setName(form.getName());
 		categoryDao.update(c);		
 	}
 
@@ -49,6 +54,16 @@ public class CategoryServiceImpl implements CategoryService{
 	@Override
 	public Category getByName(String s) {
 		return categoryDao.getByName(s);
+	}
+
+	@Override
+	public List<Category> getRootCategories() {
+		return categoryDao.getRootCategories();
+	}
+
+	@Override
+	public List<Category> getSubCategories(String s) {		
+		return categoryDao.getSubCategories(s);
 	}
 
 }

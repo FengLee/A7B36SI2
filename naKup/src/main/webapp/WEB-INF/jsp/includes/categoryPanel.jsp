@@ -5,10 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <div class="bs-sidebar hidden-print affix">
 	<ul class="nav bs-sidenav">
-<%-- 		<c:forEach items="${panelCats}" var="item">
-			<li class="active"><a href="/${item.getName()}"><c:out value="${item.getName()}"/></a></li>
-		</c:forEach> --%>
-		<li><a href="#">Ovoce</a></li>
-		<li><a href="#">Zelenina</a></li>
+		<c:forEach items="${categories}" var="item">
+			<li><a href="${pageContext.request.contextPath}/category/${item.getName()}"><c:out value="${item.getName()}"/></a></li>
+		</c:forEach>		
 	</ul>
 </div>

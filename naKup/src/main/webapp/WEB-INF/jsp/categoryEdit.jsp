@@ -8,14 +8,13 @@
 		
 					<h3><fmt:message key="category.title"/></h3>
 					
-					<div class="panel-body row">
-						<jsp:include page="/WEB-INF/jsp/includes/profileMenu.jsp" />
+					<div class="panel-body row">						
 						<div class="col-xs-12 col-sm-6 col-md-8">
 							<form class="form-horizontal" role="form" id="command" action="/naKup/${category.getName()}/edit" method="POST">
 								<div class="form-group">
 									<label for="inputFirstname" class="col-lg-2 control-label"><fmt:message key="category.name" /></label>
 									<div class="col-xs-12 col-sm-6 col-md-8">
-										<input type="text" class="form-control" id="inputFirstname" name="firstName" value="${category.getName()}">
+										<input type="text" class="form-control" id="inputFirstname" name="name" value="${category.getName()}">
 									</div>
 								</div>
 								<div class="form-group">

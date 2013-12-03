@@ -43,9 +43,7 @@ public class CategoryController {
 	
 	@RequestMapping(value="/{catName}/edit", method=RequestMethod.POST)
 	public String editCategory(@PathVariable String catName, @ModelAttribute("SpringWeb") CategoryForm form){
-		Category c = categoryService.getByName(catName);
-		c.setName(form.getName());
-		categoryService.update(c);
+		categoryService.update(catName, form);
 		return "redirect:/categories";
 	}
 	

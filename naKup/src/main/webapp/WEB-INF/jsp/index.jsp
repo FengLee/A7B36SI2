@@ -8,7 +8,10 @@
 		
 	<jsp:body>
 		<ol class="breadcrumb">
-		  <li><a href="#">Home</a></li>		  
+		  <li><a href="${pageContext.request.contextPath}/">Home</a></li>
+		  <c:forEach items="${breadcrumb}" var="item">
+		  	<li><a href="${pageContext.request.contextPath}/category/${item}"><c:out value="${item}"/></a></li>
+		  </c:forEach>		  
 		</ol>		
 		<div class="container">
 		<div class="row">		

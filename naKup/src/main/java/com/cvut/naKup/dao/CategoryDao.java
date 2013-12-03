@@ -13,4 +13,6 @@ import com.cvut.naKup.domain.Goods;
 public interface CategoryDao extends NaKupBaseDao<Category>{
 	public List<Goods> goodsInCategory(String c);
 	public Category getByName(String s);
+	public List<Category> getRootCategories();
+	public List<Category> getSubCategories(String s);
 }
