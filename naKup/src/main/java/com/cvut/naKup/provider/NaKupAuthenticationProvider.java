@@ -51,15 +51,16 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 	    User persistedUser = result.get(0);
 	    boolean correctPassword = persistedUser.hasPassword(password);
 	    if (correctPassword) {
-	    	//TODO: handle NaKup user roles
 	    	List<GrantedAuthority> grantedAuths = new ArrayList<GrantedAuthority>();
-//            grantedAuths.add(new SimpleGrantedAuthority("ROLE_USER"));
-	    	grantedAuths.add(new SimpleGrantedAuthority(Authority.Seller.toString()));
+	    	if(persistedUser.getAuthority() == Authority.Seller) {
+	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Seller.toString()));
+	    	}
 	    	if(persistedUser.getAuthority() == Authority.Buyer){
 	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Buyer.toString()));
 	    	}
 	    	if(persistedUser.getAuthority() == Authority.Admin){
 	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Buyer.toString()));
+	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Seller.toString()));
 	    		grantedAuths.add(new SimpleGrantedAuthority(Authority.Admin.toString()));
 	    	}
             Authentication auth = new NaKupAuthenticationToken(login, token.getCredentials(), grantedAuths, persistedUser.getEntityId());

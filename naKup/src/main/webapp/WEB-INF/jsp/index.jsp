@@ -5,11 +5,15 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <t:content>
+		
 	<jsp:body>
+		<ol class="breadcrumb">
+		  <li><a href="#">Home</a></li>		  
+		</ol>		
 		<div class="container">
-		<div class="row">
+		<div class="row">		
 			<c:forEach items="${listGoods}" begin="${begin}" end="${end}" var="item">
-				<div class="col-lg-3">
+				<%-- <div class="col-lg-3">
 					<div class="panel panel-default">
 						<div class="panel panel-body">
 							<div class="row">
@@ -43,9 +47,34 @@
 									<p><c:out value="${item.getText()}"/></p>	
 								</div>	
 							</div>
+							<div class="row">
+								<form action="<c:url value="/cart/add/${item.getEntityId()}" />" method="POST">
+									<input type="submit" value="Add to cart" class="btn btn-primary" />
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
+				</div> --%>
+					<div class="col-sm-6 col-md-4">
+    					<div class="thumbnail">
+      						<img src="${item.getPicture()}" height="100" width="100" class="img-rounded">
+      					<div class="caption">
+        					<h3><c:out value="${item.getName()}"/></h3>
+        					<p>
+        						<fmt:message key="goods.cost"/>
+        						<span style="padding-left: 10px"><c:out value="${item.getCost()}"/></span>
+        					</p>
+        					<p>
+        						<fmt:message key="goods.desc"/>
+        						<br>
+        						<c:out value="${item.getText()}"/>
+        					</p>
+        					<p><form action="<c:url value="/cart/add/${item.getEntityId()}" />" method="POST">
+                               		<input type="submit" value="<fmt:message key="cart.add"/>" class="btn btn-primary" />
+                               </form></p>
+      					</div>
+   					 	</div>
+  					</div>
 			</c:forEach>					
 			</div>
 			
@@ -92,7 +121,6 @@
 				</c:choose>	  		
 			</ul>
 									
-		</div>
-		
-	</jsp:body>
+		</div>		
+	</jsp:body>	
 </t:content>

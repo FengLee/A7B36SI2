@@ -1,5 +1,7 @@
 package com.cvut.naKup.service;
 
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 import com.cvut.naKup.dao.OrderDao;
 import com.cvut.naKup.domain.Goods;
 import com.cvut.naKup.domain.Order;
+import com.cvut.naKup.domain.User;
 
 /**
  * 
- * @author vavat
+ * @author vavat, Marek Čech
  *
  */
 @Service
@@ -21,6 +24,9 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private OrderDao orderDao;
+	
+	@Autowired
+	private UserService userService;
 
 	/**
 	 * {@inheritDoc}
@@ -59,6 +65,36 @@ public class OrderServiceImpl implements OrderService{
 		Order o = orderDao.findById(id);
 		List<Goods> res = o.getGoods();
 		return res;
+	}
+	
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public void processBasket(Collection<Goods> basket, Long userId) {
+		Iterator<Goods> iterator = basket.iterator();
+		User buyer = userService.findById(userId);
+		if (buyer == null) return;
+		Goods goods;
+		while (iterator.hasNext()) {
+			goods = iterator.next();
+			Order order = new Order();
+			
+			User vendor = userService.findById(goods.getVendor().getEntityId());
+			order.setForWho(vendor);
+			order.setFrom(buyer);
+			order.getGoods().add(goods);
+			
+			orderDao.persist(order);
+			vendor.getOrders().add(order);
+			userService.update(vendor);
+		}
+	}
+	public void setOrderDao(OrderDao orderDao) {
+		this.orderDao = orderDao;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 	
 }

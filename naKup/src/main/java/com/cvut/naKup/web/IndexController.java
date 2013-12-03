@@ -35,14 +35,14 @@ public class IndexController {
 
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String index(ModelMap model) {
-		List<Goods> res = goodsService.getAll();
+		List<Goods> res = goodsService.getAll();		
 		model.put("listGoods", res);
 		int count = ((((res.size())%6)==0)?((res.size())/6):((res.size()/6)+1));
 		model.addAttribute("numbPages", count);		
 		model.addAttribute("next", 2);
 		model.addAttribute("prev", 1);
 		model.addAttribute("begin", 0);
-		model.addAttribute("end", 2);
+		model.addAttribute("end", 5);
 		model.addAttribute("prevBool", true);
 		model.addAttribute("nextBool", false);
 		model.addAttribute("catBool", false);
@@ -61,9 +61,9 @@ public class IndexController {
 		Long next = (long)(pageId+1);
 		model.addAttribute("next", next);		
 		model.addAttribute("numbPages", last.intValue());
-		Long begin = (long)(pageId*3)-3;
+		Long begin = (long)(pageId*6)-6;
 		model.addAttribute("begin", begin.intValue());
-		Long end = (long)(pageId*3)-1;
+		Long end = (long)(pageId*6)-1;
 		model.addAttribute("end", end.intValue());
 		boolean nextBool = (pageId == last)?true:false;
 		boolean prevBool = (pageId == 1)?true:false;
@@ -88,9 +88,9 @@ public class IndexController {
 		String next = "/category/"+catName+"/"+(pageId+1);
 		model.addAttribute("next", next);		
 		model.addAttribute("numbPages", last.intValue());
-		Long begin = (long)(pageId*3)-3;
+		Long begin = (long)(pageId*6)-6;
 		model.addAttribute("begin", begin.intValue());
-		Long end = (long)(pageId*3)-1;
+		Long end = (long)(pageId*6)-1;
 		model.addAttribute("end", end.intValue());
 		boolean nextBool = (pageId == last)?true:false;
 		boolean prevBool = (pageId == 1)?true:false;
@@ -111,7 +111,7 @@ public class IndexController {
 		model.addAttribute("next", ("/category/"+catName+"/2"));
 		model.addAttribute("prev", ("/category/"+catName+"/1"));
 		model.addAttribute("begin", 0);
-		model.addAttribute("end", 2);
+		model.addAttribute("end", 5);
 		model.addAttribute("prevBool", true);
 		boolean nextBool = !(count > 3);
 		model.addAttribute("nextBool", nextBool);

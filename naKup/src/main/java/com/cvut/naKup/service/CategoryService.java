@@ -14,6 +14,8 @@ public interface CategoryService {
 	
 	public Category getById(Long id);
 	
+	public Category getByName(String s);
+	
 	public Long save(Category c);
 	
 	public void update(Category c);

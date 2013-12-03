@@ -16,6 +16,18 @@
 	<div class="navbar-right page-header-right">
 		<c:if test="${pageContext['request'].userPrincipal != null}">
 			
+			<a href="<c:url value="/cart" />" class="btn btn-default navbar-btn" id="cart-noajax-button">
+				<span class="glyphicon glyphicon-shopping-cart"></span>
+				<fmt:message key="cart.title" />
+			</a>
+			<button type="button" id="cart-ajax-button" class="btn btn-default navbar-btn" 
+				rel="popover" data-html="true" data-placement="bottom" data-original-title="<fmt:message key="cart.title" />" 
+				data-content="">
+				<span class="glyphicon glyphicon-shopping-cart"></span>
+				<fmt:message key="cart.title" />
+				<span class="badge">0</span>
+			</button>
+			
 			<a href="<c:url value="/profile/${userId}" />" class="btn btn-default navbar-btn">
 				<fmt:message key="loggedUserFrame.user" />:
 				<b><sec:authentication property="principal" /></b>

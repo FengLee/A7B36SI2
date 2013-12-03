@@ -1,30 +1,20 @@
-package com.cvut.naKup.domain;
+package com.cvut.naKup.web.form;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.cvut.naKup.domain.Category;
+import com.cvut.naKup.domain.Goods;
 
 /**
- * Table of goods
- * @author vavat
- *
+ * DTO for forms of {@link Goods}.
+ * 
+ * @author marek
  */
-@Entity
-public class Goods extends NaKupEntity{
-	@Column(nullable = false)
+public class ProductForm {
+
 	private String name;
-	@Column(nullable = false)
 	private double cost;
 	private String picture;
 	private String text;
-	
-	@ManyToOne
 	private Category category;
-	
-	@ManyToOne
-	private User vendor;
 	
 	public String getName() {
 		return name;
@@ -38,8 +28,6 @@ public class Goods extends NaKupEntity{
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	
-	@JsonIgnore
 	public String getPicture() {
 		return picture;
 	}
@@ -52,16 +40,6 @@ public class Goods extends NaKupEntity{
 	public void setText(String text) {
 		this.text = text;
 	}
-	
-	@JsonIgnore
-	public User getVendor() {
-		return vendor;
-	}
-	public void setVendor(User vendor) {
-		this.vendor = vendor;
-	}
-	
-	@JsonIgnore
 	public Category getCategory() {
 		return category;
 	}

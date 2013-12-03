@@ -3,6 +3,7 @@ package com.cvut.naKup.dao;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+
 import com.cvut.naKup.domain.Category;
 import com.cvut.naKup.domain.Goods;
 
@@ -17,5 +18,10 @@ public class CategoryJpaDao extends NaKupJpaBaseDao<Category> implements Categor
 	public List<Goods> goodsInCategory(String c){
 		Category b = (Category) getEntityManager().createQuery("SELECT e FROM Category e WHERE e.name = ?").setParameter(1, c).getSingleResult();
 		return getEntityManager().createQuery("SELECT e FROM Goods e WHERE e.category = "+ b.getEntityId()).getResultList();
+	}
+
+	@Override
+	public Category getByName(String s) {
+		return (Category) getEntityManager().createQuery("SELECT e FROM Category e WHERE e.name = ?").setParameter(1, s).getSingleResult();
 	}
 }

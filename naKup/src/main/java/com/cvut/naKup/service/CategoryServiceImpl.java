@@ -46,4 +46,9 @@ public class CategoryServiceImpl implements CategoryService{
 		return categoryDao.findById(id);
 	}
 
+	@Override
+	public Category getByName(String s) {
+		return categoryDao.getByName(s);
+	}
+
 }

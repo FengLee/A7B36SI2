@@ -2,8 +2,10 @@ package com.cvut.naKup.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -21,7 +23,9 @@ import com.cvut.naKup.provider.SHA1Provider;
 @Entity
 @Table(name="Users")
 @Configurable(preConstruction=true)
-@NamedQuery(name = User.FIND_BY_LOGIN, query = "SELECT u FROM User u WHERE u.login = (:login)")
+@NamedQueries ({
+	@NamedQuery(name = User.FIND_BY_LOGIN, query = "SELECT u FROM User u WHERE u.login = (:login)")
+})
 public class User extends NaKupEntity{
 	
 	public static final String FIND_BY_LOGIN = "User.findByLogin";
@@ -54,7 +58,7 @@ public class User extends NaKupEntity{
 	@OneToMany(mappedBy="forWho")
 	private List<Order> orders;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Goods> goods;
 	
 	@Autowired

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 /**
  * Table of categories
@@ -19,6 +20,9 @@ public class Category extends NaKupEntity{
 	
 	@OneToMany
 	private List<Category> subCategories;
+	
+	@ManyToOne
+	private Category superCategory;
 	
 	public String getName() {
 		return name;
@@ -38,4 +42,13 @@ public class Category extends NaKupEntity{
 	public void setSubCategories(List<Category> subCategories) {
 		this.subCategories = subCategories;
 	}
+
+	public Category getSuperCategory() {
+		return superCategory;
+	}
+
+	public void setSuperCategory(Category superCategory) {
+		this.superCategory = superCategory;
+	}
+	
 }

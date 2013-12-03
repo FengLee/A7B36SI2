@@ -13,3 +13,21 @@
 	padding-right: 20px;
 	padding-top: 3px;
 }
+
+.action-buttons {
+	border-top: 1px solid #ddd;
+	padding: 8px;
+}
+
+.action-buttons form {
+	display: inline-block;
+}
+
+#cart-noajax-table {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#cart-ajax-button {
+	display: none;
+}

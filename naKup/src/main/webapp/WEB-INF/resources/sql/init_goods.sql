@@ -1,4 +1,4 @@
-insert into goods (id,cost,name,picture,text,category_id,vendor_id) values (1,1.5,'Výborné zelené jablíčko','','Výborné zelené jablíčko, trochu kyselé, ale jinak mňamózní.',2,2);
+insert into goods (id,cost,name,picture,text,category_id,vendor_id) values (1,1.5,'Výborné zelené jablíčko','http://www.umelykytky.cz/img/p/85-177-large.jpg','Výborné zelené jablíčko, trochu kyselé, ale jinak mňamózní.',2,2);
 insert into goods (id,cost,name,picture,text,category_id,vendor_id) values (2,3.25,'Červená řepa','','Tahali červenou řepu, jako v pohádce.',6,2);
 insert into goods (id,cost,name,picture,text,category_id,vendor_id) values (3,15.25,'Brambory rané','','Výborné na hranolky!',7,2);
 insert into goods (id,cost,name,picture,text,category_id,vendor_id) values (4,9.3,'Brambory pozdní','','Staré, nahnilé, smrdí.',7,2);

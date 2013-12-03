@@ -10,21 +10,30 @@
 	<header>
 		<jsp:include page="/WEB-INF/jsp/includes/pageHeader.jsp" />
 	</header>
-	<body>
-		<div class="container">
+	<body>		
+		
+		<div class="container bs-docs-container">
+		<div class="row">
+		<div class="col-md-2">
+		<jsp:include page="/WEB-INF/jsp/includes/categoryPanel.jsp" />
+		</div>
+		<div class="col-md-9">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 		    		<jsp:include page="/WEB-INF/jsp/includes/panelHeader.jsp" />
 		    	</div>
-		  		<div class="panel-body">
+		  		<div class="panel-body">		  			
 		      		<jsp:doBody/>
 		      	</div>
 		  	</div>
-	  	</div>
+		  	</div>
+		  	</div>
+	  	</div>	  	
   	</body>
   	<footer>
     	<jsp:include page="/WEB-INF/jsp/includes/footer.jsp" />
   	</footer>
   	<script src="${pageContext.request.contextPath}/bootstrap/js/jquery-1.10.2.min.js"></script>
 	<script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
+	
 </html>
