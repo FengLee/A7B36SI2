@@ -45,11 +45,4 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/main/webapp/WEB-INF/tags/content.tag</name>
-			<type>1</type>
-			<location>/home/vavat/git/A7B36SI2/naKup/src/main/webapp/WEB-INF/tags/content.tag</location>
-		</link>
-	</linkedResources>
 </projectDescription>
