@@ -23,7 +23,7 @@
 		  				<tr>
 		  					<td><c:out value="${item.getEntityId()}"/></td>
 		  					<td><c:out value="${item.getName()}"/></td>
-		  					<td><a href="#" class="btn btn-primary">Edit</a> Smazat</td>		  					
+		  					<td><a href="/naKup/${item.getName()}/edit" class="btn btn-primary">Edit</a></td>		  					
 		  				</tr>
 		  			</c:forEach>
 		  		</tbody>
