@@ -7,9 +7,9 @@ import com.cvut.naKup.domain.Goods;
 import com.cvut.naKup.domain.Order;
 
 /**
+ * Order service interface.
  * 
- * @author vavat, Marek Čech
- *
+ * @author vavat, Marek Cech
  */
 public interface OrderService {
 	

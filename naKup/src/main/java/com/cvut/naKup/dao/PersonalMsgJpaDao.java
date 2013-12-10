@@ -15,6 +15,9 @@ import com.cvut.naKup.domain.PersonalMsg;
 @Repository
 public class PersonalMsgJpaDao extends NaKupJpaBaseDao<PersonalMsg> implements PersonalMsgDao {
 
+	/**
+	 * Constructor calling superclass.
+	 */
 	public PersonalMsgJpaDao() {
 		super(PersonalMsg.class);		
 	}

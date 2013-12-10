@@ -8,6 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 /**
  * Custom implementation of {@link AbstractAuthenticationToken}.
  * 
+ * Extends {@link AbstractAuthenticationToken}.
+ * 
  * @author Marek Cech
  */
 public class NaKupAuthenticationToken extends AbstractAuthenticationToken {
@@ -102,6 +104,5 @@ public class NaKupAuthenticationToken extends AbstractAuthenticationToken {
 	public Object getDetails() {
 		return details;
 	}
-	
 
 }

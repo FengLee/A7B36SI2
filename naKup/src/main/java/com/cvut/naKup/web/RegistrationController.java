@@ -27,7 +27,7 @@ public class RegistrationController {
 	/**
 	 * Method for showing registration page.
 	 * 
-	 * @return
+	 * @return {@link ModelAndView} with {@link RegistrationForm}.
 	 */
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public ModelAndView showPage() {
@@ -38,7 +38,7 @@ public class RegistrationController {
 	 * Method for handling sent form.
 	 * 
 	 * @param form {@link RegistrationForm} with data about new user.
-	 * @return
+	 * @return redirect to index page.
 	 */
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	public String addUser(@ModelAttribute("SpringWeb") RegistrationForm form) {
@@ -46,6 +46,11 @@ public class RegistrationController {
 		return "redirect:/";
 	}
 
+	/**
+	 * Setter of {@link UserService}.
+	 * 
+	 * @param userService {@link UserService} to set.
+	 */
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}

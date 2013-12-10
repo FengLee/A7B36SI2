@@ -15,8 +15,9 @@ import com.cvut.naKup.domain.NaKupEntity;
 /**
  * NaKup base for JPA DAO implementations.
  * 
- * @author marek cech
- *
+ * Implements {@link NaKupBaseDao}.
+ * 
+ * @author Marek Cech
  */
 public class NaKupJpaBaseDao<T extends NaKupEntity> implements NaKupBaseDao<T> {
 	

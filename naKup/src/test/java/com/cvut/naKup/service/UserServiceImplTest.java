@@ -25,6 +25,9 @@ public class UserServiceImplTest extends NaKupTest {
 	@Autowired
 	UserService userService;
 	
+	/**
+	 * Field containing {@link RegistrationForm} for test purposes. 
+	 */
 	private RegistrationForm form;
 	
 	/**

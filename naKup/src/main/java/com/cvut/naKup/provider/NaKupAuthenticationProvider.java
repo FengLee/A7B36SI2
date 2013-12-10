@@ -34,6 +34,8 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 
 	/**
 	 * Custom implementation of authentication method.
+	 * 
+	 * return {@link NaKupAuthenticationToken} of authenticated user.
 	 */
 	@Override
 	public Authentication authenticate(Authentication authentication)
@@ -71,6 +73,8 @@ public class NaKupAuthenticationProvider implements AuthenticationProvider {
 
 	/**
 	 * Method for checking which class of token provider requires.
+	 * 
+	 * return <code>true</code> if this provider supports given authentication, <code>false</code> otherwise.
 	 */
 	@Override
 	public boolean supports(Class<?> authentication) {

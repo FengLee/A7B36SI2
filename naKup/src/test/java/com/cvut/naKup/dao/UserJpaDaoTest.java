@@ -27,6 +27,9 @@ public class UserJpaDaoTest extends NaKupTest {
 	@Autowired
 	UserDao userDao;
 	
+	/**
+	 * Field containing id of persisted {@link User}.
+	 */
 	private Long id1;
 	
 	/**

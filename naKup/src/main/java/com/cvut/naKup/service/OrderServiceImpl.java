@@ -14,17 +14,23 @@ import com.cvut.naKup.domain.Order;
 import com.cvut.naKup.domain.User;
 
 /**
+ * Implementation of {@link OrderService}.
  * 
- * @author vavat, Marek Čech
- *
+ * @author vavat, Marek Cech
  */
 @Service
 @Transactional
 public class OrderServiceImpl implements OrderService{
 	
+	/**
+	 * Dao of {@link Order} entity.
+	 */
 	@Autowired
 	private OrderDao orderDao;
 	
+	/**
+	 * Dao of {@link User} entity.
+	 */
 	@Autowired
 	private UserService userService;
 
@@ -90,9 +96,21 @@ public class OrderServiceImpl implements OrderService{
 			userService.update(vendor);
 		}
 	}
+	
+	/**
+	 * Setter of {@link OrderDao}.
+	 * 
+	 * @param orderDao {@link OrderDao} to set.
+	 */
 	public void setOrderDao(OrderDao orderDao) {
 		this.orderDao = orderDao;
 	}
+	
+	/**
+	 * Setter of {@link UserService}.
+	 * 
+	 * @param userService {@link UserService} to set.
+	 */
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}

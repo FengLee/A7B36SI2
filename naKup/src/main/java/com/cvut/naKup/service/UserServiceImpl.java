@@ -1,9 +1,5 @@
 package com.cvut.naKup.service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -77,6 +73,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.findById(userId);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public User findByIdWithGoods(Long userId) {
 		User user = userDao.findById(userId);
@@ -96,6 +95,11 @@ public class UserServiceImpl implements UserService {
 		userDao.update(user);
 	}
 
+	/**
+	 * Setter of {@link UserDao}.
+	 * 
+	 * @param userDao {@link UserDao} to set.
+	 */
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}

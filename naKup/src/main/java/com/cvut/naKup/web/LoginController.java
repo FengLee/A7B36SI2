@@ -13,9 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class LoginController {
 	
+	/**
+	 * Method for showing login page.
+	 * 
+	 * @return name of jsp to show.
+	 */
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String login(ModelMap model) {
- 
+	public String login() {
 		return "login";
 	}
  
@@ -23,7 +27,7 @@ public class LoginController {
 	 * Method for handling login errors.
 	 * 
 	 * @param model {@link ModelMap} to put attributes to.
-	 * @return
+	 * @return name of jsp to show.
 	 */
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
@@ -36,7 +40,7 @@ public class LoginController {
 	 * Method for logout handling.
 	 * 
 	 * @param model {@link ModelMap} to put attributes to.
-	 * @return
+	 * @return name of jsp to show.
 	 */
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model) {
