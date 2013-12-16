@@ -1,5 +1,6 @@
 var shown = false;
 var baseUrl = "http://localhost:8080/naKup/";
+//var baseUrl = "http://nakup.herokuapp.com/";
 
 $( window ).load(function() {
 	$("#cart-noajax-button").css({"display" : "none"});

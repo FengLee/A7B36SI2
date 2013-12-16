@@ -9,7 +9,7 @@
 	<jsp:body>
 	
 		<div class="container">
-			<form class="form-horizontal" role="form" id="command" action="/naKup/addUser" method="POST">
+			<form class="form-horizontal" role="form" id="command" action="<c:url value="/addUser" />" method="POST">
 			
 				<div class="page-header">
 				  <h1><fmt:message key="register" /></h1>
